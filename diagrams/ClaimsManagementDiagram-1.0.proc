@@ -12,30 +12,60 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xOps2DpsEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xOps2TpsEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xOps2jpsEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_cxTKsjsjEe25rqZxD_qZbw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_cxTKszsjEe25rqZxD_qZbw" name="claim" content="claim" type="TYPE_VARIABLE" returnType="com.company.model.Claim">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_cxTKtDsjEe25rqZxD_qZbw" documentation="Claim object to store information about a customer claim." name="claim" dataType="_xOptBDpsEe2lxZ8Yrkqtbw" className="com.company.model.Claim"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_cxTKtTsjEe25rqZxD_qZbw" name="claimInput.answer" content="claimInput?.answer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_cxTKtjsjEe25rqZxD_qZbw" name="claimInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_cxTKtzsjEe25rqZxD_qZbw" type="JAVA_METHOD" expression="setAnswer">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_xOps2zpsEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_xOps3DpsEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_xOps3TpsEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_xOps3jpsEe2lxZ8Yrkqtbw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_xOps3zpsEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_xOps4DpsEe2lxZ8Yrkqtbw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_xOps4TpsEe2lxZ8Yrkqtbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_95NmwDsjEe25rqZxD_qZbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_xOps4jpsEe2lxZ8Yrkqtbw"/>
+          <contract xmi:type="process:Contract" xmi:id="_xOps4jpsEe2lxZ8Yrkqtbw">
+            <inputs xmi:type="process:ContractInput" xmi:id="_cxTKsDsjEe25rqZxD_qZbw" name="claimInput" type="COMPLEX" description="Customer claim" dataReference="claim" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_cxTKsTsjEe25rqZxD_qZbw" name="answer" description="Claim answer" createMode="false"/>
+            </inputs>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_xOps4zpsEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:Task" xmi:id="_-rwgQDpuEe2lxZ8Yrkqtbw" name="Read the answer and rate it" outgoing="_Fh6fwDpvEe2lxZ8Yrkqtbw" incoming="_9ZUA8DpuEe2lxZ8Yrkqtbw" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_9Ta0UTpuEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_9Ta0UDpuEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_9Ta0UjpuEe2lxZ8Yrkqtbw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_m1JOMjsjEe25rqZxD_qZbw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_m1JOMzsjEe25rqZxD_qZbw" name="claim" content="claim" type="TYPE_VARIABLE" returnType="com.company.model.Claim">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m1JONDsjEe25rqZxD_qZbw" documentation="Claim object to store information about a customer claim." name="claim" dataType="_xOptBDpsEe2lxZ8Yrkqtbw" className="com.company.model.Claim"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_m1JONTsjEe25rqZxD_qZbw" name="claimInput.satisfactionLevel" content="claimInput?.satisfactionLevel" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_m1JONjsjEe25rqZxD_qZbw" name="claimInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_m1JONzsjEe25rqZxD_qZbw" type="JAVA_METHOD" expression="setSatisfactionLevel">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_9Ta0UzpuEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_9Ta0VDpuEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_9Ta0VTpuEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_9Ta0VzpuEe2lxZ8Yrkqtbw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_9Ta0VjpuEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_-rxHWTpuEe2lxZ8Yrkqtbw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_-rxHWjpuEe2lxZ8Yrkqtbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_95NmwTsjEe25rqZxD_qZbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_-rxHWDpuEe2lxZ8Yrkqtbw"/>
+          <contract xmi:type="process:Contract" xmi:id="_-rxHWDpuEe2lxZ8Yrkqtbw">
+            <inputs xmi:type="process:ContractInput" xmi:id="_m1JOMDsjEe25rqZxD_qZbw" name="claimInput" type="COMPLEX" description="Customer claim" dataReference="claim" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_m1JOMTsjEe25rqZxD_qZbw" name="satisfactionLevel" type="INTEGER" description="Customer satisfaction" createMode="false"/>
+            </inputs>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_-rxHWzpuEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:XORGateway" xmi:id="_F_4OIDpvEe2lxZ8Yrkqtbw" name="Satisfaction level" outgoing="_N22KYDpvEe2lxZ8Yrkqtbw _WYh3kDpvEe2lxZ8Yrkqtbw" incoming="_Fh6fwDpvEe2lxZ8Yrkqtbw">
@@ -58,7 +88,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_WYe0RzpvEe2lxZ8Yrkqtbw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_WYe0RjpvEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_anQh0DpvEe2lxZ8Yrkqtbw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_anQh0TpvEe2lxZ8Yrkqtbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_95NmwjsjEe25rqZxD_qZbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_anP6yTpvEe2lxZ8Yrkqtbw"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_anQh0jpvEe2lxZ8Yrkqtbw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -70,10 +100,12 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_qSLWwDsYEe25rqZxD_qZbw" documentation="Claim object to store information about a customer claim." name="claim" dataType="_xOptBDpsEe2lxZ8Yrkqtbw" className="com.company.model.Claim">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_qSL90DsYEe25rqZxD_qZbw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_EEYCITscEe25rqZxD_qZbw" name="initClaim()" content="def claimVar = new com.company.model.Claim()&#xD;&#xA;claimVar.description = claimInput?.description&#xD;&#xA;return claimVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Claim">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_EEYCIjscEe25rqZxD_qZbw" name="claimInput" type="COMPLEX"/>
+        </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_xOps5DpsEe2lxZ8Yrkqtbw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_xOps5TpsEe2lxZ8Yrkqtbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_95NmwzsjEe25rqZxD_qZbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_xOps5jpsEe2lxZ8Yrkqtbw">
         <targetForm xmi:type="expression:Expression" xmi:id="_xOps5zpsEe2lxZ8Yrkqtbw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -105,7 +137,14 @@
         <condition xmi:type="expression:Expression" xmi:id="_eDCFIjpvEe2lxZ8Yrkqtbw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_xOps6zpsEe2lxZ8Yrkqtbw" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
-      <contract xmi:type="process:Contract" xmi:id="_xOps7DpsEe2lxZ8Yrkqtbw"/>
+      <contract xmi:type="process:Contract" xmi:id="_xOps7DpsEe2lxZ8Yrkqtbw">
+        <inputs xmi:type="process:ContractInput" xmi:id="_EEXbEDscEe25rqZxD_qZbw" name="claimInput" type="COMPLEX" description="Customer claim" dataReference="claim">
+          <inputs xmi:type="process:ContractInput" xmi:id="_EEXbETscEe25rqZxD_qZbw" name="description" description="Claim description"/>
+        </inputs>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_EEYCIDscEe25rqZxD_qZbw" expression="claimInput?.description != null" errorMessage="description is mandatory for Claim" name="mandatory_claimInput_description">
+          <inputNames>claimInput</inputNames>
+        </constraints>
+      </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_xOps7TpsEe2lxZ8Yrkqtbw">
         <name xmi:type="expression:Expression" xmi:id="_xOps7jpsEe2lxZ8Yrkqtbw" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_xOps7zpsEe2lxZ8Yrkqtbw" content="" returnTypeFixed="true"/>
